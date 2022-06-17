@@ -1,6 +1,23 @@
 public class Stock {
-    final static int stock = 50;
+    private int volume;
     private Products products;
+
+    public Stock() {
+
+    }
+
+    public Stock(int volume) {
+        this.volume = volume;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
+    }
+
 
     public Products getProducts() {
         return products;
@@ -12,7 +29,7 @@ public class Stock {
 
     @Override
     public String toString() {
-        return "Products = " + products;
+        return "Stock = " + products;
     }
 
     static class Products {
@@ -66,7 +83,8 @@ public class Stock {
 
         @Override
         public String toString() {
-            return  type + " | " + name + " | "  + volume + " | " + producingCountry;
+            return type + " | " + name + " | " + volume + " | " + producingCountry;
         }
+
     }
 }

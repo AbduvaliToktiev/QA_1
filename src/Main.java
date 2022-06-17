@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -42,7 +43,8 @@ public class Main {
                 // Метод для добавления товара на склад
                 productAddition(sc);
             } else if (mainMenuItem == 2) {
-                System.out.println();
+                // Метод для добавления группы товаров на склад
+                groupProduct(sc);
             } else if (mainMenuItem == 3) {
                 System.out.println();
             } else if (mainMenuItem == 4) {
@@ -87,15 +89,9 @@ public class Main {
     }
 
     private static void productAddition(Scanner sc) {
-        Stock1 stock1 = new Stock1();
-        Stock2 stock2 = new Stock2();
-        Stock3 stock3 = new Stock3();
-        Stock[] stocks = new Stock[3];
-        stocks[0] = stock1;
-        stocks[1] = stock2;
-        stocks[2] = stock3;
-            System.out.println("Выберите товар для добовления на склад: ");
-            System.out.println("Коробка с шампунями" + "\nКоробка с мылом" + "\nБлок с напитка");
+        Stock stock = new Stock(50);
+        System.out.println("Выберите товар для добовления на склад: ");
+        System.out.println("Коробка с шампунями" + "\nКоробка с мылом" + "\nБлок с напитка");
         while (true) {
             String choice = sc.nextLine();
             switch (choice) {
@@ -124,7 +120,48 @@ public class Main {
                     System.out.println(cocaCola);
                     break;
                 default:
+            }
+        }
+    }
 
+    private static void groupProduct(Scanner sc) {
+        System.out.print("Введите количество коробок: ");
+        int choice1 = sc.nextInt();
+        System.out.println("Товары для добавления: " + "\nКоробка с шампунями" + "\nКоробка с мылом" + "\nБлок с напитка");
+        System.out.print("Введите название товара: ");
+        while (true) {
+            String choice2 = sc.nextLine();
+            switch (choice2) {
+                case "Коробка с шампунями":
+                    Stock.Products shampoo = new Stock.Products();
+                    shampoo.setType("Шампунь");
+                    shampoo.setName("Head & Shoulders");
+                    shampoo.setVolume(3);
+                    shampoo.setProducingCountry("Америка");
+                    for (int i = 0; i < choice1; i++) {
+                        System.out.println(shampoo);
+                    }
+                    break;
+                case "Коробка с мылом":
+                    Stock.Products soap = new Stock.Products();
+                    soap.setType("Мыло");
+                    soap.setName("Хозяйственное мыло");
+                    soap.setVolume(4);
+                    soap.setProducingCountry("Россия");
+                    for (int a = 0; a < choice1; a++) {
+                        System.out.println(soap);
+                    }
+                    break;
+                case "Блок с напитка":
+                    Stock.Products cocaCola = new Stock.Products();
+                    cocaCola.setType("Напиток");
+                    cocaCola.setName("Coca cola");
+                    cocaCola.setVolume(5);
+                    cocaCola.setProducingCountry("Америка");
+                    for (int s = 0; s < choice1; s++) {
+                        System.out.println(cocaCola);
+                    }
+                    break;
             }
         }
     }
