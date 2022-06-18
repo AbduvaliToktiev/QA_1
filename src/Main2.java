@@ -4,6 +4,13 @@ import java.util.Scanner;
 public class Main2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        ArrayList<Stock> stocks = new ArrayList<>();
+        Stock stock1 = new Stock();
+        Stock stock2 = new Stock();
+        Stock stock3 = new Stock();
+        stocks.add(stock1);
+        stocks.add(stock2);
+        stocks.add(stock3);
         Product shampoo = new Product();
         shampoo.setType("Шампунь");
         shampoo.setName("Head & Shoulders");
@@ -19,13 +26,6 @@ public class Main2 {
         cocaCola.setName("Coca cola");
         cocaCola.setVolume(5);
         cocaCola.setProducingCountry("Америка");
-        ArrayList<Stock> stocks = new ArrayList<>();
-        Stock stock1 = new Stock();
-        Stock stock2 = new Stock();
-        Stock stock3 = new Stock();
-        stocks.add(stock1);
-        stocks.add(stock2);
-        stocks.add(stock3);
         ArrayList<Product> products = new ArrayList<>();
         products.add(shampoo);
         products.add(soap);
@@ -33,7 +33,7 @@ public class Main2 {
         while (true) {
             int mainMenuItem;
             System.out.println("-------------------------------------------------------------");
-            System.out.println("Выберитепунктменю");
+            System.out.println("Выберите пункт меню");
             System.out.println("1) Работа с товарами");
             System.out.println("2) Работа со складом");
             System.out.println("0) Выход  из программы");
