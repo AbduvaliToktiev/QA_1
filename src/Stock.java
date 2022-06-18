@@ -32,7 +32,7 @@ public class Stock {
     @Override
     public String toString() {
         return "Склад " +
-                "\nобъём = " + getVolume() +
-                "\nпродукт = " + getProduct() + "\n";
+                "\nОбъём = " + getVolume() +
+                "\nПродукт = " + getProduct() + "\n";
     }
 }
